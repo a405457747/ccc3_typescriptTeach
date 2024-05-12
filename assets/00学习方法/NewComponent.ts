@@ -12,7 +12,7 @@ export class NewComponent extends Component {
 
     kk = Component;
 
-    speed = 3;
+    speed = 0.5;
     start() {
         /*
         let k=[3,2,1];
