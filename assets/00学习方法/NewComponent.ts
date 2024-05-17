@@ -1,4 +1,4 @@
-import { _decorator, Color, Component, Node, tween, UIOpacity, Vec3, Label, Sprite, CCInteger, Animation } from 'cc';
+import { _decorator, Color, Component, Node, tween, UIOpacity, Vec3, Label, Sprite, CCInteger, Animation, resources, TextAsset } from 'cc';
 const { ccclass, property, requireComponent, menu, executionOrder } = _decorator;
 
 
@@ -14,6 +14,7 @@ export class NewComponent extends Component {
 
     speed = 0.5;
     start() {
+      
         /*
         let k=[3,2,1];
         let k2={a:3,b:true}
@@ -25,6 +26,81 @@ export class NewComponent extends Component {
         let ani = this.node.getComponent(Animation);
         ani.play("animation");
         */
+       
+        let o ={
+            name:"siki",
+            age:32,
+        }
+
+        function kkk(k=undefined){
+            console.log(this.name+this.age+k);
+        }
+
+        kkk.apply(o);
+        kkk.call(o);
+
+        
+        /*
+        this.a(3)
+        .then((t)=>{
+            console.log(t);
+            return this.b(4);
+        })
+        .then((t)=>{
+            console.log(t);
+            return this.c("1");
+        })
+        .then((t)=>{
+            console.log(t);
+        })
+        */
+
+        Promise.all([this.c("2"),this.c("3"),this.c("1")]
+        )
+        .then((t)=>{
+            console.log(t);
+            this.init();
+        });
+       
+    }
+    init(){
+        console.log("init");
+    }
+
+     c(fileName){
+        return new Promise((re)=>{
+            resources.load(fileName,TextAsset,(err,res)=>{
+                re(res.text);
+            })
+        });
+     }
+
+    a(t){
+        return new Promise((re)=>{
+
+            tween(this.node)
+            .delay(t)
+            .call(()=>{
+                re(t);
+            })
+
+            .start();
+        })
+
+    }
+
+    b(t){
+        return new Promise((re)=>{
+
+            tween(this.node)
+            .delay(t)
+            .call(()=>{
+                re(t);
+            })
+
+            .start();
+        })
+
     }
 
     update(deltaTime: number) {
