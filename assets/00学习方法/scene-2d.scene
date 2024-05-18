@@ -182,7 +182,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 403.44497607655506,
+    "_orthoHeight": 370.2305159165752,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -529,7 +529,7 @@
     "_string": "button",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 26.125,
+    "_actualFontSize": 28.46875,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
@@ -767,7 +767,7 @@
     "__prefab": null,
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 99.98084255382776,
+      "width": 99.96923452936335,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -800,7 +800,7 @@
     "_string": "我是中国人",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
-    "_actualFontSize": 26.125,
+    "_actualFontSize": 28.46875,
     "_fontSize": 20,
     "_fontFamily": "Arial",
     "_lineHeight": 40,
